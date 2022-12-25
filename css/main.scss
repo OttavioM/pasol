@@ -1,0 +1,272 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+
+// custom colors
+$primary: rgba(10, 5, 0, 1);
+$pasol-pink: #FBECDC;
+$pasol-blue: #67B6DB;
+$pasol-purple: #C79FB5;
+$pasol-yellow: rgb(252, 214, 115);
+$pasol-orange: #FD9550;
+$pasol-dark-orange: rgb(215, 102, 26);
+$pasol-green: #47B19B;
+$pasol-dark-green: #17594D;
+$gray: #e6e6e6;
+
+$theme-colors: (
+    "primary": $primary,
+    "gray": $gray
+);
+
+/*** create custom colors ***/
+$custom-color: (
+    "icon-background": $pasol-dark-orange,
+    "pasol-yellow": $pasol-yellow,
+    "pasol-dark-orange": $pasol-dark-orange,
+    "pasol-pink": $pasol-pink,
+    "pasol-blue": $pasol-blue
+);
+
+// Merge maps
+
+$theme-colors: map-merge($theme-colors, $custom-color);
+
+
+@import "./bootstrap/scss/bootstrap";
+ 
+// Add custom code after this
+
+/***HEADER***/
+.announcement-bar {
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--bs-gray);
+    background-color: var(--bs-pasol-yellow);
+    height: 41px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: inline-flex;
+        margin: 0 -10px;
+        a{
+            text-decoration: none;
+            color:var(--bs-black);
+        }
+        li {
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+
+            .bi {
+                background-color: none;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                margin-right: 6px;
+                font-size: 1.2rem;
+                padding-bottom: 7px;
+            }
+        }
+        
+        .cart {
+            i {
+                font-size: 1.2rem;
+            }            
+        }
+
+        .aws-container .aws-search-form .aws-wrapper {
+            padding-top:5px;
+        }
+
+        .aws-search-field {
+            font-size: 0.9rem;
+            border-radius: 20px!important;
+            padding-left: 1.4rem;
+            height:30px;
+        }
+
+        .aws-container {
+            .aws-form-btn {
+                border:none;
+                // border-radius: 20px!important;
+                // border-color: var(--bs-pasol-yellow)!important;
+                background:none;
+                margin-left: 3px!important;
+                // background-color: var(--bs-pasol-yellow)!important;
+
+            }
+        }
+
+        // make the bar announcement bar disarrpear if too small or mobile
+        @include media-breakpoint-down(md){
+            display: none;
+        }
+    }
+    // make the bar announcement for mobile only
+    &__mobile{
+    @include media-breakpoint-down(md){
+        // display: none;
+        display: block;
+        }
+    }
+    
+}
+
+
+.site-header {
+    // for sticky header
+    position: sticky;
+    top: 41px;
+    width: 100%;
+    z-index: 20;
+    // end sticky
+    background-color: var(--bs-white);
+
+    img.custom-logo{
+        width: 100px;
+        height: 100px;
+    }
+
+    .aws-search-field {
+        font-size: 0.9rem;
+        border-radius: 20px!important;
+        padding-left: 1.4rem;
+    }
+
+    .aws-form-btn {
+        border-radius: 20px!important;
+        margin-left: 3px!important;
+    }
+}
+
+/***MAIN MENU***/
+.main-navigation{
+    font-weight: 600;
+
+    /* change bg color to the current element */
+    .current-menu-item{
+        background-color: var(--bs-pasol-pink);
+    }
+
+    /*change the font color */
+    
+    a{
+        color: var(--bs-black);
+        padding: 0.6rem 1.4rem;
+    } 
+    
+    a:hover{
+        // color: var(--bs-orange);
+        background-color: var(--bs-pasol-pink);
+    } 
+
+    .menu-toggle{
+        background-color: var(--bs-pasol-pink);
+        color: var(--bs-black);
+        border: none;
+        border-radius: 20px!important;
+    }
+}
+
+.main-navigation.toggled ul {
+    // background-color: var(--bs-pasol-pink);
+    background-color: var(--bs-pasol-pink);
+
+    .current-menu-item{
+        background-color: var(--bs-pasol-yellow)!important;
+    }
+
+    a:hover{
+        // color: var(--bs-orange);
+        background-color: var(--bs-pasol-yellow);
+    } 
+}
+
+/******Front-Page******/
+
+/***Carousel***/
+.container{
+    &__carousel{
+    // display: flex;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    width: 100%;
+
+    // --bs-gutter-x: 1.5rem;
+    // --bs-gutter-y: 0;
+    // padding-right: calc(var(--bs-gutter-x) * 0.5);
+    // padding-left: calc(var(--bs-gutter-x) * 0.5);
+    // margin-right: auto;
+    // margin-left: auto;
+    }
+}
+
+.carousel-indicators li {
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: rgb(9, 9, 9);
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+}
+
+.carousel{ 
+    .carousel-control-prev, .carousel-control-next{
+        width: 9%;
+        filter: invert(100%);
+    }
+
+    // .carousel-control-next-icon:after
+    // {
+    // content: '>';
+    // font-size: 55px;
+    // color: red;
+    // }
+
+    // .carousel-control-prev-icon:after {
+    // content: '<';
+    // font-size: 55px;
+    // color: red;
+    // }
+}
+
+/***SECTION POSTs***/
+.container-fluid{
+    &__white{
+        background-color: var(--bs-white);
+    }
+
+    &__pink{
+        background-color: var(--bs-pasol-pink);
+    }
+
+    &__blue{
+        background-color: var(--bs-pasol-blue);
+    }
+}
+
+.first-post{
+    &__image{
+        padding-left: 4rem;
+        img{
+            border-radius: 22px;
+        }
+    }
+    
+}
