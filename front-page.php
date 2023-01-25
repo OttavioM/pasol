@@ -147,4 +147,4 @@ get_header('logo');
 
 <?php
 // get_sidebar();
-get_footer();
+get_footer('logo');

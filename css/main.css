@@ -10962,6 +10962,33 @@ textarea.form-control-lg {
   margin-left: 3px !important;
 }
 
+@media (max-width: 767.98px) {
+  #masthead.scrolled {
+    transition: 0.5s;
+  }
+  #masthead.scrolled img.custom-logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/****FOOTER*****/
+#colophon {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(6, auto);
+}
+
+#colophon .logo {
+  grid-row: 1/span 6;
+  width: 20px;
+  height: 20px;
+}
+
+#colophon .link {
+  grid-column: 2;
+}
+
 /***MAIN MENU***/
 .main-navigation {
   font-weight: 600;

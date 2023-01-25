@@ -9,10 +9,14 @@ $('#carouselExampleCaptions').carousel({
   })
 
 //
-// $(window).on("scroll", function () {
-//   if (document.body.scrollTop > 41 || document.documentElement.scrollTop > 41) {
-//     document.getElementsByClassName("site-header").style.top = "0px";
-//   } else {
-//     document.getElementById("masthead").style.top = "41px";
-//   }
-// });
+function scrolled_header() {
+window.addEventListener('scroll', function() {
+  var header = document.getElementById('masthead');
+  var scrollPosition = window.scrollY;
+  if (scrollPosition > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+}

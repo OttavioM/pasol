@@ -253,3 +253,20 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 		</div>	
 	</section>';
   }
+
+  
+  function generateFooter($links) {
+	$logo = the_custom_logo();
+	echo '<footer id="footer">';
+	echo '  <div class="logo">' . $logo . '</div>';
+  
+	foreach ($links as $row) {
+	echo '  <div class="link-row">';
+	foreach ($row as $link) {
+		echo '    <div class="link"><a href="' . $link['href'] . '">' . $link['text'] . '</a></div>';
+	}
+	echo '  </div>';
+	}
+
+	echo '</footer>';
+  }
