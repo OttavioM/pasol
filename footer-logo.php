@@ -12,9 +12,32 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
+		<div class="info-site-footer pt-5 pb-5">
 
+		<div class="container">
+			<div class="row">
+				<div class="col-2">
+					LOGO
+				</div>
 
+				<div class="col-2">
+					Support
+				</div>
+
+				<div class="col-2">
+					About
+				</div>
+
+				<div class="col-2">
+					Legal
+				</div>
+
+				<div class="col-md-4 ms-auto">
+					Keep in Touch
+				</div>
+
+			</div>
+		</div>
 		
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
