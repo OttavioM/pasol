@@ -10973,20 +10973,8 @@ textarea.form-control-lg {
 }
 
 /****FOOTER*****/
-#colophon {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: repeat(6, auto);
-}
-
-#colophon .logo {
-  grid-row: 1/span 6;
-  width: 20px;
-  height: 20px;
-}
-
-#colophon .link {
-  grid-column: 2;
+#colophon .container .col .img-fluid {
+  max-width: 10rem;
 }
 
 /***MAIN MENU***/
