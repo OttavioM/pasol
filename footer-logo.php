@@ -31,7 +31,7 @@
 						Legal
 					</div>
 
-					<div class="col-md-4 ms-auto">
+					<div class="col-md-4 ms-auto text-center">
 						Keep in Touch
 					</div>
 				</div>

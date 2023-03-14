@@ -254,19 +254,18 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	</section>';
   }
 
-  
-  function generateFooter($links) {
-	$logo = the_custom_logo();
-	echo '<footer id="footer">';
-	echo '  <div class="logo">' . $logo . '</div>';
-  
-	foreach ($links as $row) {
-	echo '  <div class="link-row">';
-	foreach ($row as $link) {
-		echo '    <div class="link"><a href="' . $link['href'] . '">' . $link['text'] . '</a></div>';
-	}
-	echo '  </div>';
-	}
+  function create_list_with_links() {
+    $args = func_get_args(); // Get all the arguments passed to the function
+    $list = '<ul>'; // Initialize the list with an opening unordered list tag
 
-	echo '</footer>';
-  }
+    // Loop through the arguments in pairs (item name and hyperlink)
+    for ($i = 0; $i < count($args); $i += 2) {
+        $name = $args[$i];
+        $link = $args[$i + 1];
+        $list .= "<li><a href=\"$link\">$name</a></li>"; // Wrap each item name and hyperlink in an HTML list item tag with a link
+    }
+
+    $list .= '</ul>'; // Add a closing unordered list tag
+
+    return $list; // Return the final HTML list
+}

@@ -185,13 +185,21 @@ $theme-colors: map-merge($theme-colors, $custom-color);
 /****FOOTER*****/
 
 #colophon{
-.container{
-    .col{
-        .img-fluid{
-            max-width: 10rem;
+    .container{
+        .col{
+            .img-fluid{
+                max-width: 10rem;
+                }
+            }
+        .site-footer{
+            &__logo{
+                img.custom-logo{
+                    width: 80%;
+                    height: auto;
+                }
             }
         }
-    }
+        }
 }
 // #colophon {
 //     display: grid;

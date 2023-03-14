@@ -10976,6 +10976,10 @@ textarea.form-control-lg {
 #colophon .container .col .img-fluid {
   max-width: 10rem;
 }
+#colophon .container .site-footer__logo img.custom-logo {
+  width: 80%;
+  height: auto;
+}
 
 /***MAIN MENU***/
 .main-navigation {
