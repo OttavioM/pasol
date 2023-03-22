@@ -10949,8 +10949,8 @@ textarea.form-control-lg {
   }
 }
 .site-header img.custom-logo {
-  width: 100px;
-  height: 100px;
+  width: 6.5rem;
+  height: auto;
 }
 .site-header .aws-search-field {
   font-size: 0.9rem;
@@ -10964,11 +10964,11 @@ textarea.form-control-lg {
 
 @media (max-width: 767.98px) {
   #masthead.scrolled {
-    transition: 0.5s;
+    transition: 2s;
   }
   #masthead.scrolled img.custom-logo {
-    width: 80px;
-    height: 80px;
+    width: 6.5rem;
+    height: auto;
   }
 }
 

@@ -20,19 +20,54 @@
 					</div>
 
 					<div class="col-2">
-						Support
+						Support </br>
+						<?php
+							$support_links = create_links(
+								'Contact Us', 'https://www.example.com/contact',
+								'FAQs', 'https://www.example.com/faqs',
+								'Shipping & Returns', 'https://www.example.com/docs'
+							);
+							echo $support_links;
+						?>
 					</div>
 
 					<div class="col-2">
-						About
+						About </br>
+						<?php
+							$about_links = create_links(
+								'About Us', 'https://www.example.com/contact',
+								'Our Partners', 'https://www.example.com/faqs',
+								'Reef Planting', 'https://www.example.com/docs',
+								'Tree Planting', 'https://www.example.com/docs'
+							);
+							echo $about_links;
+						?>
 					</div>
 
 					<div class="col-2">
-						Legal
+						Legal </br>
+						<?php
+							$legal_links = create_links(
+								'Terms Of Use', 'https://www.example.com/contact',
+								'Privacy Policy', 'https://www.example.com/faqs',
+								'Subscrition Policy', 'https://www.example.com/docs',
+								'Accessibility', 'https://www.example.com/docs'
+							);
+							echo $legal_links;
+						?>
 					</div>
 
 					<div class="col-md-4 ms-auto text-center">
-						Keep in Touch
+						<b>Keep in Touch</b> </br>
+						<?php
+							$instagram_link = create_links('<i class="bi bi-instagram"></i>', 'https://www.instagram.com/');
+							$facebook_link = create_links('<i class="bi bi-facebook"></i>', 'https://www.facebook.com/');
+							$tiktok_link = create_links('<i class="bi bi-tiktok"></i>', 'https://www.tiktok.com/');
+							
+							echo $instagram_link;
+							echo $facebook_link;
+							echo $tiktok_link;
+						?>
 					</div>
 				</div>
 			</div>		

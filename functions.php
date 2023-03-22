@@ -256,16 +256,30 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
   function create_list_with_links() {
     $args = func_get_args(); // Get all the arguments passed to the function
-    $list = '<ul>'; // Initialize the list with an opening unordered list tag
+    $list = '<ul style="list-style-type:none; padding:-5;">'; // Initialize the list with an opening unordered list tag and some CSS to remove the markers and padding
 
     // Loop through the arguments in pairs (item name and hyperlink)
     for ($i = 0; $i < count($args); $i += 2) {
         $name = $args[$i];
         $link = $args[$i + 1];
-        $list .= "<li><a href=\"$link\">$name</a></li>"; // Wrap each item name and hyperlink in an HTML list item tag with a link
+        $list .= "<li style=\"text-align:left;\"><a href=\"$link\">$name</a></li>"; // Wrap each item name and hyperlink in an HTML list item tag with a link and some CSS to align the text to the left
     }
 
     $list .= '</ul>'; // Add a closing unordered list tag
 
     return $list; // Return the final HTML list
+}
+
+function create_links() {
+    $args = func_get_args(); // Get all the arguments passed to the function
+    $links = ''; // Initialize the list of links with an empty string
+
+    // Loop through the arguments in pairs (item name and hyperlink)
+    for ($i = 0; $i < count($args); $i += 2) {
+        $name = $args[$i];
+        $link = $args[$i + 1];
+        $links .= "<a href=\"$link\">$name</a><br>"; // Wrap each item name and hyperlink in an HTML link tag with a line break
+    }
+
+    return $links; // Return the final list of links
 }

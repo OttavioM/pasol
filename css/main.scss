@@ -153,8 +153,8 @@ $theme-colors: map-merge($theme-colors, $custom-color);
     background-color: var(--bs-white);
 
     img.custom-logo{
-        width: 100px;
-        height: 100px;
+        width: 6.5rem;
+        height: auto;
     }
 
     .aws-search-field {
@@ -173,11 +173,12 @@ $theme-colors: map-merge($theme-colors, $custom-color);
 // masthead is the site-hedear but in js is recognized with the ID
 #masthead.scrolled {
     @include media-breakpoint-down(md){
-        transition: 0.5s;
+        transition: 2s;
 
         img.custom-logo{
-            width: 80px;
-            height: 80px;
+            // width: 4rem;
+            width: 6.5rem;
+            height: auto;
         }
     }
 }
