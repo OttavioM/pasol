@@ -12,7 +12,7 @@
  * @package pasol
  */
 
-get_header();
+get_header('tot');
 ?>
 
 	<main id="primary" class="site-main">
