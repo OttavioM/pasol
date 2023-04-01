@@ -7,7 +7,10 @@
  * @package pasol
  */
 
-get_header();
+get_header('top');
+get_header('logo');
+// get_header('tot');
+// get_header();
 ?>
 
 	<main id="primary" class="site-main">
