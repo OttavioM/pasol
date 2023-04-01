@@ -30,7 +30,7 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'pasol' ); ?></a>
 	
 	<!-- THIS IS THE announcement-bar -->
-	<div class="announcement-bar pt-0.3 pb-3">
+	<div class="announcement-bar pt-40pb-3">
         <div class="container">
             <div class="row">
                 <!-- FOR NOT MOBILE there is a menu -->
@@ -60,7 +60,7 @@
                 </div>
                 <!-- FOR MOBILE TEXT -->
                 <div class = "announcement-bar__mobile">
-                    <p class ="text-center pt-2"> MOBILE TEXT </p>
+                    <p class ="text-center pt-2"> MOBILE testo </p>
                 </div>
             </div>
         </div>    
@@ -89,24 +89,6 @@
 			</div>
 		</div>
 
-		<!-- <div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$pasol_description = get_bloginfo( 'description', 'display' );
-			if ( $pasol_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $pasol_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div> --> <!--.site-branding -->
 
 		<!-- MENU NAVIGATION -->
 		<nav id="site-navigation" class="main-navigation">
