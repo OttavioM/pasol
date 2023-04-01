@@ -60,7 +60,7 @@
                 </div>
                 <!-- FOR MOBILE TEXT -->
                 <div class = "announcement-bar__mobile">
-                    <p class ="text-center pt-2"> MOBILE testo </p>
+                    <p class ="text-center pt-2"> MOBILE ttestto </p>
                 </div>
             </div>
         </div>    
