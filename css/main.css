@@ -10741,7 +10741,8 @@ textarea.form-control-lg {
   font-size: 0.8rem;
   border-bottom: 1px solid var(--bs-gray);
   background-color: var(--bs-pasol-yellow);
-  height: 2rem;
+  height: 3rem;
+  display: flex;
 }
 @media (min-width: 768px) {
   .announcement-bar {
@@ -10752,8 +10753,16 @@ textarea.form-control-lg {
     margin: auto;
   }
 }
+@media (max-width: 767.98px) {
+  .announcement-bar {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+    margin: auto;
+  }
+}
 .announcement-bar__list {
-  padding: 0;
   margin: 0;
   list-style-type: none;
   display: inline-flex;
@@ -10773,8 +10782,8 @@ textarea.form-control-lg {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   margin-right: 6px;
   font-size: 1.2rem;
   padding-bottom: 1rem;
@@ -10789,7 +10798,7 @@ textarea.form-control-lg {
   font-size: 0.9rem;
   border-radius: 20px !important;
   padding-left: 1.4rem;
-  height: 1rem;
+  height: 2rem;
 }
 .announcement-bar__list .aws-container .aws-form-btn {
   border: none;
@@ -10809,7 +10818,6 @@ textarea.form-control-lg {
 @media (max-width: 767.98px) {
   .announcement-bar__mobile {
     display: block;
-    top: 41px;
   }
 }
 
@@ -10819,7 +10827,7 @@ textarea.form-control-lg {
 @media (min-width: 768px) {
   .site-header {
     position: sticky;
-    top: 2rem;
+    top: 3rem;
     width: 100%;
     z-index: 10;
   }
@@ -10827,7 +10835,7 @@ textarea.form-control-lg {
 @media (max-width: 767.98px) {
   .site-header {
     position: sticky;
-    top: 0px;
+    top: 3rem;
     width: 100%;
     z-index: 10;
   }
