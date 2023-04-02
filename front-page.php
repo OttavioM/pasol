@@ -106,7 +106,7 @@ get_header('logo');
 		</section>
 
 		<!-- Second post -->
-		<section class = "container-fluid__white pt-5 pb-5">
+		<!-- <section class = "container-fluid__white pt-5 pb-5">
 		<div class="row">
 			<div class="first-post__image col-md-5 col-sm-11">
 				<a href = "#">
@@ -122,10 +122,10 @@ get_header('logo');
 				<p class="text-center">Controbute to the planet, each purchase seed a coral</p>
 			</div>
 		</div>	
-		</section>
+		</section> -->
 
 		<!-- Third post -->
-		<section class = "container-fluid__blue pt-5 pb-5">
+		<!-- <section class = "container-fluid__blue pt-5 pb-5">
 		<div class="row">
 			<div class="first-post__image col-md-5 col-sm-11">
 				<a href = "#">
@@ -141,12 +141,12 @@ get_header('logo');
 				<p class="text-center">Controbute to the planet, each purchase seed a coral</p>
 			</div>
 		</div>	
-		</section>
+		</section> -->
 
-		<?php front_page_post("/img/reef_proj/reef_protection.jpg ","ciao","testo","white") ?>
+		<!-- <?php front_page_post("/img/reef_proj/reef_protection.jpg ","ciao","testo","white") ?> -->
 
 	</main><!-- #main -->
 
 <?php
 // get_sidebar();
-get_footer('logo');
+// get_footer('logo');

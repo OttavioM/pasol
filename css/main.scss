@@ -36,7 +36,9 @@ $theme-colors: map-merge($theme-colors, $custom-color);
 @import "./bootstrap/scss/bootstrap";
  
 // Add custom code after this
-
+body {
+    overflow-x: hidden;
+  }
 /***HEADER***/
 .announcement-bar {
     font-size: 0.8rem;
@@ -338,17 +340,22 @@ $theme-colors: map-merge($theme-colors, $custom-color);
 /***SECTION POSTs***/
 .container-fluid{
     &__white{
+        // takes all the settings of the container-fluid
+        @extend .container-fluid;
         background-color: var(--bs-white);
     }
 
     &__pink{
+        @extend .container-fluid;
         background-color: var(--bs-pasol-pink);
     }
 
     &__blue{
+        @extend .container-fluid;
         background-color: var(--bs-pasol-blue);
     }
 }
+
 
 .first-post{
     &__image{

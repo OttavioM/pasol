@@ -621,6 +621,9 @@ progress {
 
 .container,
 .container-fluid,
+.container-fluid__blue,
+.container-fluid__pink,
+.container-fluid__white,
 .container-xxl,
 .container-xl,
 .container-lg,
@@ -3715,6 +3718,9 @@ textarea.form-control-lg {
 }
 .navbar > .container,
 .navbar > .container-fluid,
+.navbar > .container-fluid__blue,
+.navbar > .container-fluid__pink,
+.navbar > .container-fluid__white,
 .navbar > .container-sm,
 .navbar > .container-md,
 .navbar > .container-lg,
@@ -10736,6 +10742,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body {
+  overflow-x: hidden;
+}
+
 /***HEADER***/
 .announcement-bar {
   font-size: 0.8rem;
