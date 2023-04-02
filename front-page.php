@@ -149,4 +149,4 @@ get_header('logo');
 
 <?php
 // get_sidebar();
-// get_footer('logo');
+get_footer('logo');
