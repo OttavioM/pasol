@@ -30,7 +30,7 @@
         <div class="container">
             <div class="row">
                 <!-- FOR NOT MOBILE there is a menu -->
-                <div class="col-md-4 d-flex justify-content-start col-sm-12">
+                <div class="col-md-4 d-flex justify-content-start col-sm-12 pb-3">
                     <ul class="announcement-bar__list" > 
                         <li>
                             <!-- <i class="bi bi-info-circle"></i> -->
@@ -41,14 +41,14 @@
                 </div>
                 <div class="col-md-8 d-flex justify-content-end col-sm-12">
                     <ul class="announcement-bar__list" > 
-                        <li>
+                        <li class = "pb-3">
                                 <?php aws_get_search_form( true ); ?>
                         </li>
                         <li>                            
                             <a href="Account"><i class="bi bi-person"></i></a>
                         </li> 
 
-                        <div class="col cart d-flex justify-content-end align-center">
+                        <div class="col cart d-flex justify-content-end align-center pt-2">
                             <a href="<?php echo wc_get_cart_url(); ?>"><i class="bi bi-cart4"></i></a>
                             <a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> – <?php echo WC()->cart->get_cart_total(); ?></a>
                         </div> 
@@ -56,7 +56,7 @@
                 </div>
                 <!-- FOR MOBILE TEXT -->
                 <div class = "announcement-bar__mobile">
-                    <p class ="text-center pt-2"> MOBILE test </p>
+                    <p class ="text-center pt-2"> MOBILE TEXT </p>
                 </div>
             </div>
         </div>    
