@@ -84,6 +84,45 @@
 			</div>
 		</div>
 
+		<div class="row footer-mobile">
+			<div class="col-12">
+				<button class="btn btn-link" data-toggle="collapse" data-target=".support-links" aria-expanded="false" aria-controls="support-links">
+				Support <span class="plus">+</span>
+				</button>
+				<div class="collapse support-links">
+				<ul>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Customer Service</a></li>
+				</ul>
+				</div>
+			</div>
+			<div class="col-12">
+				<button class="btn btn-link" data-toggle="collapse" data-target=".about-links" aria-expanded="false" aria-controls="about-links">
+				About <span class="plus">+</span>
+				</button>
+				<div class="collapse about-links">
+				<ul>
+					<li><a href="#">Our Story</a></li>
+					<li><a href="#">Leadership</a></li>
+					<li><a href="#">Investors</a></li>
+				</ul>
+				</div>
+			</div>
+			<div class="col-12">
+				<button class="btn btn-link" data-toggle="collapse" data-target=".legal-links" aria-expanded="false" aria-controls="legal-links">
+				Legal <span class="plus">+</span>
+				</button>
+				<div class="collapse legal-links">
+				<ul>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Disclaimer</a></li>
+				</ul>
+				</div>
+			</div>
+			</div>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
