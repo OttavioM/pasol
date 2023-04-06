@@ -70,59 +70,59 @@
 						?>
 					</div>
 				</div>
+			</div><!-- .site-info -->
+			
 			</div>		
-		</div><!-- .site-info -->
-
+			<div class="site-footer__mobile">
+				<div class="col-12">
+				<button class="btn btn-link" data-toggle="collapse" data-target=".support-links" aria-expanded="false" aria-controls="support-links">
+					Support <span class="plus">+</span>
+				</button>
+				<div class="collapse support-links">
+					<ul>
+						<li><a href="#">FAQ</a></li>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">Customer Service</a></li>
+				</ul>
+			</div>
+		</div>
+			<div class="col-12">
+				<button class="btn btn-link" data-toggle="collapse" data-target=".about-links" aria-expanded="false" aria-controls="about-links">
+					About <span class="plus">+</span>
+				</button>
+				<div class="collapse about-links">
+					<ul>
+						<li><a href="#">Our Story</a></li>
+						<li><a href="#">Leadership</a></li>
+						<li><a href="#">Investors</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-12">
+				<button class="btn btn-link" data-toggle="collapse" data-target=".legal-links" aria-expanded="false" aria-controls="legal-links">
+					Legal <span class="plus">+</span>
+				</button>
+				<div class="collapse legal-links">
+					<ul>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Terms of Use</a></li>
+						<li><a href="#">Disclaimer</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
 		<div class="container pt-2 pb-2">
-			<div class="row d-flex align-items-center">
+			<div class="row d-flex">
 				<div class="col">
-					<p>&copy; <?php bloginfo('name');?> <?php echo date('Y');?> 
+					<p class = "pt-1" >&copy; <?php bloginfo('name');?> <?php echo date('Y');?> 
 				</div>
 				<div class="col h-25 d-inline-block text-end">
 					<img src="<?php echo get_template_directory_uri();?>/img/payment_image1.png" alt = "..." class="img-fluid " max-width= 10rem; loading = "lazy">
 				</div>
 			</div>
 		</div>
-
-		<div class="row footer-mobile">
-			<div class="col-12">
-				<button class="btn btn-link" data-toggle="collapse" data-target=".support-links" aria-expanded="false" aria-controls="support-links">
-				Support <span class="plus">+</span>
-				</button>
-				<div class="collapse support-links">
-				<ul>
-					<li><a href="#">FAQ</a></li>
-					<li><a href="#">Contact Us</a></li>
-					<li><a href="#">Customer Service</a></li>
-				</ul>
-				</div>
-			</div>
-			<div class="col-12">
-				<button class="btn btn-link" data-toggle="collapse" data-target=".about-links" aria-expanded="false" aria-controls="about-links">
-				About <span class="plus">+</span>
-				</button>
-				<div class="collapse about-links">
-				<ul>
-					<li><a href="#">Our Story</a></li>
-					<li><a href="#">Leadership</a></li>
-					<li><a href="#">Investors</a></li>
-				</ul>
-				</div>
-			</div>
-			<div class="col-12">
-				<button class="btn btn-link" data-toggle="collapse" data-target=".legal-links" aria-expanded="false" aria-controls="legal-links">
-				Legal <span class="plus">+</span>
-				</button>
-				<div class="collapse legal-links">
-				<ul>
-					<li><a href="#">Privacy Policy</a></li>
-					<li><a href="#">Terms of Use</a></li>
-					<li><a href="#">Disclaimer</a></li>
-				</ul>
-				</div>
-			</div>
-			</div>
-		</div>
+		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

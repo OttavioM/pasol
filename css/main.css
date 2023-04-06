@@ -621,6 +621,7 @@ progress {
 
 .container,
 .container-fluid,
+.container-fluid__footer,
 .container-fluid__blue,
 .container-fluid__pink,
 .container-fluid__white,
@@ -3718,6 +3719,7 @@ textarea.form-control-lg {
 }
 .navbar > .container,
 .navbar > .container-fluid,
+.navbar > .container-fluid__footer,
 .navbar > .container-fluid__blue,
 .navbar > .container-fluid__pink,
 .navbar > .container-fluid__white,
@@ -10878,9 +10880,33 @@ body {
 #colophon .container .col .img-fluid {
   max-width: 10rem;
 }
-#colophon .container .site-footer__logo img.custom-logo {
+
+.site-footer__logo img.custom-logo {
   width: 80%;
   height: auto;
+}
+@media (max-width: 767.98px) {
+  .site-footer .info-site-footer {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .site-footer .info-site-footer {
+    display: block;
+  }
+}
+.site-footer__mobile {
+  background-color: #C79FB5;
+}
+@media (min-width: 768px) {
+  .site-footer__mobile {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .site-footer__mobile {
+    display: block;
+  }
 }
 
 /***MAIN MENU***/
@@ -10956,7 +10982,6 @@ body {
 .container-fluid__blue {
   background-color: var(--bs-pasol-blue);
 }
-
 .first-post__image {
   padding-left: 4rem;
 }
