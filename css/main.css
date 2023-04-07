@@ -619,7 +619,7 @@ progress {
   color: #6c757d;
 }
 
-.container,
+.container, .container__woocommerce,
 .container-fluid,
 .container-fluid__footer,
 .container-fluid__blue,
@@ -640,27 +640,27 @@ progress {
 }
 
 @media (min-width: 576px) {
-  .container-sm, .container {
+  .container-sm, .container, .container__woocommerce {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
-  .container-md, .container-sm, .container {
+  .container-md, .container-sm, .container, .container__woocommerce {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container {
+  .container-lg, .container-md, .container-sm, .container, .container__woocommerce {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
-  .container-xl, .container-lg, .container-md, .container-sm, .container {
+  .container-xl, .container-lg, .container-md, .container-sm, .container, .container__woocommerce {
     max-width: 1140px;
   }
 }
 @media (min-width: 1400px) {
-  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container, .container__woocommerce {
     max-width: 1320px;
   }
 }
@@ -3717,7 +3717,7 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
 }
-.navbar > .container,
+.navbar > .container, .navbar > .container__woocommerce,
 .navbar > .container-fluid,
 .navbar > .container-fluid__footer,
 .navbar > .container-fluid__blue,
@@ -10877,7 +10877,7 @@ body {
 }
 
 /****FOOTER*****/
-#colophon .container .col .img-fluid {
+#colophon .container .col .img-fluid, #colophon .container__woocommerce .col .img-fluid {
   max-width: 10rem;
 }
 
@@ -10943,11 +10943,15 @@ body {
 }
 
 /******Front-Page******/
+.gray-line {
+  border: none;
+  border-top: 0.05rem solid #17594D !important;
+  margin: 1em 0;
+}
+
 /***Carousel***/
-.container__carousel {
-  padding-bottom: 3rem;
-  padding-top: 3rem;
-  width: 100%;
+.site-main .container-liquid {
+  padding: 0rem 0 2rem 0;
 }
 
 .carousel-indicators li {
@@ -10972,7 +10976,7 @@ body {
   filter: invert(100%);
 }
 
-/***SECTION POSTs***/
+/**CONTAINER SECTION**/
 .container-fluid__white {
   background-color: var(--bs-white);
 }
@@ -10982,6 +10986,11 @@ body {
 .container-fluid__blue {
   background-color: var(--bs-pasol-blue);
 }
+.container__woocommerce {
+  padding: 5rem 0 1rem 0;
+}
+
+/***SECTION POSTs***/
 .first-post__image {
   padding-left: 4rem;
 }

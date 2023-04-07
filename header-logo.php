@@ -96,5 +96,5 @@
 		</nav><!-- #site-navigation -->
 
 
-
+		<?php echo '<hr class="gray-line">';?>
 	</header><!-- #masthead -->

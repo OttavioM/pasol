@@ -283,3 +283,8 @@ function create_links() {
 
     return $links; // Return the final list of links
 }
+
+ /***
+  * WOOCOMMERCE
+  */
+  add_theme_support('woocommerce');

@@ -20,7 +20,7 @@ get_header('logo');
 
 	<main id="primary" class="site-main">
 		<!-- SLIDER -->
-		<section class="container-liquid pt-5 pb-5">
+		<section class="container-liquid">
 			<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
