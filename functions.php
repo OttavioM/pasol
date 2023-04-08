@@ -307,3 +307,37 @@ function wp_enqueue_woocommerce_style(){
 	}
 }
 add_action( 'wp_enqueue_scripts', 'wp_enqueue_woocommerce_style' );
+
+/* Create custom WooCommerce empty cart page */
+if ( ! function_exists( 'et_core_intentionally_unescaped' ) ) {
+	function et_core_intentionally_unescaped( $string, $context ) {
+		if ( function_exists( 'wp_check_invalid_utf8' ) && ! wp_check_invalid_utf8( $string ) && current_user_can( 'unfiltered_html' ) ) {
+			return wp_kses_post( $string );
+		} else {
+			return $string;
+		}
+	}
+}
+
+
+function ds_custom_wc_empty_cart_text()
+{
+   ob_start();?>
+<div class="cart-empty">
+	<div class="empty-cart-header">
+		<?php woocommerce_breadcrumb(); ?>
+	</div>
+	<div class="empty-cart">
+		<span class="empty-cart-icon"><i class="bi bi-cart"></i></span>
+		<h2>Your Cart Is Currently Empty!</h2>
+		<p> Looks like you have not made your choice yet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+	</div>
+</div>
+	<?php
+	$output = ob_get_clean();
+	ob_flush();
+	echo et_core_intentionally_unescaped($output, "html");
+	// echo $output;
+}
+remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
+add_filter('woocommerce_cart_is_empty', 'ds_custom_wc_empty_cart_text', 20 );

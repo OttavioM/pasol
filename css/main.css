@@ -1,6 +1,14 @@
 @charset "UTF-8";
 :root {
-  --pasol-dark-orange: rgb(215, 102, 26);
+  --pasol-dark-orange: rgb(215, 102, 26,1);
+  --pasol-pink: #FBECDC;
+  --pasol-blue: #67B6DB;
+  --pasol-purple: #C79FB5;
+  --pasol-yellow: rgb(252, 214, 115,1);
+  --pasol-orange: #FD9550;
+  --pasol-dark-orange: rgb(215, 102, 26,1);
+  --pasol-green: #47B19B;
+  --pasol-dark-green: #17594D;
 }
 
 /*** create custom colors ***/
@@ -11000,4 +11008,47 @@ body {
 }
 .first-post__image img {
   border-radius: 22px;
+}
+
+/* Styling for WooCommerce Cart page */
+.empty-cart h2, .empty-cart .h2 {
+  line-height: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.empty-cart p {
+  line-height: 2em;
+  max-width: 600px;
+  margin: auto;
+}
+
+.empty-cart {
+  text-align: center;
+  padding-bottom: 10vw;
+}
+
+.container p.return-to-shop, .container__woocommerce p.return-to-shop {
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.empty-cart-header {
+  float: right;
+  margin-top: -50px;
+  position: relative;
+}
+
+.empty-cart-icon {
+  display: inline-block;
+  line-height: initial;
+  font-size: 2rem;
+  color: var(--pasol-dark-green);
+  border: 2px solid var(--pasol-dark-green);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  padding: 1rem;
+  margin-bottom: 20px;
 }/*# sourceMappingURL=main.css.map */
