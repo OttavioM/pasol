@@ -1,4 +1,8 @@
 @charset "UTF-8";
+:root {
+  --pasol-dark-orange: rgb(215, 102, 26);
+}
+
 /*** create custom colors ***/
 /*!
  * Bootstrap  v5.2.2 (https://getbootstrap.com/)
@@ -10987,7 +10991,7 @@ body {
   background-color: var(--bs-pasol-blue);
 }
 .container__woocommerce {
-  padding: 5rem 0 1rem 0;
+  padding: 3rem 0 1rem 0;
 }
 
 /***SECTION POSTs***/

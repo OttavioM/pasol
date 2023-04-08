@@ -11,6 +11,7 @@
 @import "variables";
 @import "animation";
 @import "fonts";
+@import '../css/main.css';
 
 /**
  * Global styles
@@ -525,7 +526,7 @@ p.demo_store,
 	span.onsale {
 		min-height: 3.236em;
 		min-width: 3.236em;
-		padding: 0.202em;
+		// padding: 0.202em;
 		font-size: 1em;
 		font-weight: 700;
 		position: absolute;
@@ -535,7 +536,7 @@ p.demo_store,
 		left: -0.5em;
 		margin: 0;
 		border-radius: 100%;
-		background-color: $highlight;
+		background-color: var(--pasol-dark-orange);
 		color: $highlightext;
 		font-size: 0.857em;
 		z-index: 9;
