@@ -11010,7 +11010,8 @@ body {
   border-radius: 22px;
 }
 
-/* Styling for WooCommerce Cart page */
+/* STYLING FOR WOOCOMMERCE CART PAGE */
+/** empty cart**/
 .empty-cart h2, .empty-cart .h2 {
   line-height: 2em;
   font-weight: 700;
@@ -11051,4 +11052,15 @@ body {
   border-radius: 50%;
   padding: 1rem;
   margin-bottom: 20px;
+}
+
+/** show images in cart in mobile **/
+@media (max-width: 980px) {
+  .woocommerce table.cart .product-thumbnail, .woocommerce-page table.cart .product-thumbnail {
+    display: block;
+    text-align: left !important;
+  }
+  .woocommerce-page table.shop_table_responsive tr td.product-thumbnail::before {
+    display: none;
+  }
 }/*# sourceMappingURL=main.css.map */

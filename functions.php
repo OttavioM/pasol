@@ -341,3 +341,23 @@ function ds_custom_wc_empty_cart_text()
 }
 remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
 add_filter('woocommerce_cart_is_empty', 'ds_custom_wc_empty_cart_text', 20 );
+
+/** styling cart **/
+
+
+// Custom function to modify the WooCommerce cart item thumbnail
+function my_custom_wc_cart_item_thumbnail( $thumbnail, $cart_item, $cart_item_key ) {
+	// Get the product ID for the cart item
+	$product_id = $cart_item['product_id'];
+	// Get the product thumbnail URL
+	$thumbnail_url = get_the_post_thumbnail_url( $product_id, 'thumbnail' );
+	// Create a new thumbnail image with custom styling
+	$thumbnail = '<img src="' . $thumbnail_url . '" style="width: 6rem; height: 6rem; border-radius: 50%;">';
+	// Return the modified thumbnail image
+	return $thumbnail;
+}
+add_filter( 'woocommerce_cart_item_thumbnail', 'my_custom_wc_cart_item_thumbnail', 10, 3 );
+
+/**
+ * Customize the cart item table.
+ */
