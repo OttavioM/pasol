@@ -47,12 +47,10 @@
                         <li>                            
                             <a href="Account"><i class="bi bi-person"></i></a>
                         </li> 
-
-                        <div class="col cart d-flex justify-content-end align-center pt-2">
+                        <!-- <div class="col cart d-flex justify-content-end align-center pt-2">
                             <a href="<?php echo wc_get_cart_url(); ?>"><i class="bi bi-cart4"></i></a>
                             <a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> – <?php echo WC()->cart->get_cart_total(); ?></a>
-                        </div> 
-                        
+                        </div>  -->
                     </ul>
                 </div>
                 <!-- FOR MOBILE TEXT -->
