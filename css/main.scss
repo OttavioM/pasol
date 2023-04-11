@@ -25,6 +25,7 @@ $gray: #e6e6e6;
     --pasol-dark-orange: rgb(215, 102, 26,1);
     --pasol-green: #47B19B;
     --pasol-dark-green: #17594D;
+    --pasol-new-green: #a8d6a6;
 }
 
 $theme-colors: (
@@ -499,3 +500,78 @@ body {
     // margin: 20px 0;
     display: inline-block;}
 	.contant_box_404{ margin-top:-50px;}
+
+/**FLOATING BASKET WITH XOO-WSC **/
+.xoo-wsc-basket {
+    height: 3rem;
+    width: 3rem;
+    padding: 0rem 0rem 0rem 0.5rem;
+}
+
+// .xoo-wsc-empty-cart:before {
+//     content: "Your cart is currently empty. Add items to your cart to proceed to checkout.";
+// }
+
+.xoo-wsc-header {
+    background-color: var(--pasol-yellow);
+}
+
+.xoo-wsc-body {
+    background-color: var(--pasol-pink);
+}
+
+.xoo-wsc-footer {
+    background-color: var(--pasol-pink);
+}
+
+// line of separatino of the products
+.xoo-wsc-product {
+    display: flex;
+    border-bottom: 1px solid var(--pasol-yellow);
+}
+
+.xoo-wsc-items-count, .xoo-wsc-sc-count {
+    background-color: var(--pasol-yellow) !important;
+    color: var(--pasol-dark-green) !important;
+}
+//** THIS IS THE HOOVER **//
+// .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) a.button:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) button.button:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) input.button:hover, .woocommerce:where(body:not(.woocommerce-block-theme-has-button-styles)) #respond input#submit:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce a.button:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce button.button:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce input.button:hover, :where(body:not(.woocommerce-block-theme-has-button-styles)) .woocommerce #respond input#submit:hover {
+//     background-color: var(--pasol-green);
+//     text-decoration: none;
+//     background-image: none;
+//     color: #515151;
+// }
+
+/** DEACTIVATE ALL THE COLORS **/
+// .xoo-wsc-ft-btn.button.btn,
+// .xoo-wsc-ft-btn.button.btn:hover {
+//     background-color: var(--pasol-green) !important;
+// }
+
+
+.xoo-wsc-ft-btn-checkout {
+    background-color:  var(--pasol-new-green)!important; /* replace with your desired color code */
+  }
+
+  .xoo-wsc-ft-btn-checkout:hover {
+    background-color: var(--pasol-dark-green) !important;
+    color: #ffffff !important;
+}
+
+// .xoo-wsc-ft-btn-continue {
+//     background-color:  var(--pasol-purple)!important; /* replace with your desired color code */
+//   }
+
+  .xoo-wsc-ft-btn-continue:hover {
+    background-color: var(--pasol-dark-green) !important;
+    color: #ffffff !important;
+}
+
+// .xoo-wsc-ft-btn-cart {
+//     background-color:  var(--pasol-yellow)!important; /* replace with your desired color code */
+//   }
+
+  .xoo-wsc-ft-btn-cart:hover {
+    background-color: var(--pasol-dark-green) !important;
+    color: #ffffff !important;
+}
