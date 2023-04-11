@@ -100,6 +100,7 @@ get_header('logo');
 
 			<div class="first-post__col col-md-4 col-sm-12 justify-content-end align-center pt-sm-5 pt-md-0">
 				<h1 class="text-center "> REEF SAFE </h1>
+				
 				<p class="text-center">Controbute to the planet, each purchase seed a coral</p>
 			</div>
 		</div>	
