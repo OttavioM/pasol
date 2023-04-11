@@ -48,7 +48,7 @@
 						Legal </br>
 						<?php
 							$legal_links = create_links(
-								'Terms Of Use', 'https://www.example.com/contact',
+								'Terms Of Use', 'aa',
 								'Privacy Policy', 'https://www.example.com/faqs',
 								'Subscrition Policy', 'https://www.example.com/docs',
 								'Accessibility', 'https://www.example.com/docs'
@@ -71,7 +71,7 @@
 					</div>
 				</div>
 			</div><!-- .site-info -->
-			
+
 			</div>		
 			<div class="site-footer__mobile">
 				<div class="col-12">
