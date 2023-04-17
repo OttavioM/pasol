@@ -152,8 +152,9 @@ function pasol_scripts() {
 	wp_enqueue_script( 'bootstrap-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js', array('jquery'));
 	// User defined JavaScript
 	wp_enqueue_script( 'boostrap-script', get_template_directory_uri() .'/js/script.js', array('jquery'));
-	
-	
+
+	wp_enqueue_script( 'header_hider_scrolling', get_template_directory_uri() .'/js/script.js', array( 'jquery' ),false, true);
+	// wp_enqueue_script( 'hideHeaderOnScroll', get_template_directory_uri() .'/js/hideHeaderOnScroll.js', array( 'jquery' ),false, true);
 	
 	
 
@@ -162,6 +163,104 @@ function pasol_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'pasol_scripts' );
+
+// THIS FUNCTION CALL THE HEADER SCROLLING INSIDE THE 
+// script.js and enqueue in the footer, however it can be also
+// replaced with the hideHeaderOnScroll.js, calling here and then calling in the header
+// befaore the </head> is closed, like: 
+/** <script src= <?php echo get_template_directory_uri() .'/js/hideHeaderOnScroll.js'; ?>> </script> **/
+// benefit to have functions in different files is that you can call only one function and where you want,
+// but if you have alot it is a chaos. On the other hand, only one big file some functions needs to be called in 
+// the footer as the one here
+function call_header_hider_scrolling() {
+    ?>
+    <script>
+        (function(){
+            header_hider_scrolling();
+        })();
+    </script>
+    <?php
+}
+add_action( 'wp_footer', 'call_header_hider_scrolling' );
+
+
+// new shortcode to see the orders for the user and standard woocommerce empty orders
+// add_shortcode('account_orders', 'display_account_orders');
+// function display_account_orders()
+// {
+//     $user_id = get_current_user_id();
+//     $customer_orders = wc_get_orders( array(
+//         'customer_id' => $user_id,
+//         'status' => array( 'wc-completed', 'wc-processing' ),
+//     ) );
+//     return wc_get_template(
+//         'myaccount/orders.php',
+//         array(
+//             'has_orders' => $customer_orders
+//         )
+//     );
+// }
+
+// add shortcode for the user orders with personalizations of the 
+// text when there is no orders
+add_shortcode('user_orders', 'display_user_orders');
+function display_user_orders()
+{
+    if ( ! is_user_logged_in() ) {
+        return 'Please log in to view your orders.';
+    }
+
+    $user = wp_get_current_user();
+
+    if ( ! wc_customer_bought_product( $user->user_email, $user->ID, 0 ) ) {
+        return 'You have not placed any orders yet.';
+    }
+
+    $args = array(
+        'customer' => $user->ID,
+        'status'   => array_keys( wc_get_order_statuses() ),
+    );
+
+    $orders = wc_get_orders( $args );
+
+    ob_start();
+    wc_get_template( 'myaccount/orders.php', array( 'orders' => $orders, 'current_user' => $user ) );
+    return ob_get_clean();
+}
+// for the log out
+// Shortcode Action hook 
+
+add_shortcode('user_logout', 'custom_logout');
+
+// Callback 
+function custom_logout(){
+	
+    ob_start();
+    // Check if user is logged in 
+    if (is_user_logged_in()){ 
+    	// Create the url variable 
+	   	$wc_shortcode_logout_url = site_url() . '/?customer-logout=true';?>
+		    <button class="wc_logout_shortcode_btn"><a href="<?php echo $wc_shortcode_logout_url; ?>">Log Out</a></button> 
+    	    <?php 
+	}
+
+    return ob_get_clean();
+}
+
+/** THIS FUNCTION HIDE THE INFOBOX IF USER NOT LOGGED IN**/
+function hide_infobox_if_not_logged_in() {
+    if ( ! is_user_logged_in() ) {
+        ?>
+        <style>
+            div.eb-infobox-wrapper {
+                display: none !important;
+            }
+        </style>
+        <?php
+    }
+}
+add_action( 'wp_head', 'hide_infobox_if_not_logged_in' );
+
 
 /**
  * Implement the Custom Font.
@@ -289,7 +388,7 @@ function create_links() {
   */
   add_theme_support('woocommerce');
 
-  //Remove WooCommerce styles
+//Remove WooCommerce styles
   function remove_woocommerce_styles($enqueue_styles){
     unset( $enqueue_styles['woocommerce-general'] );    // Remove the gloss
     // unset( $enqueue_styles['woocommerce-layout'] );        // Remove the layout
@@ -298,7 +397,7 @@ function create_links() {
 }
 add_filter('woocommerce_enqueue_styles','remove_woocommerce_styles');
 
-  /**Enqueue your own stylesheet**/
+/**Enqueue your own stylesheet**/
 function wp_enqueue_woocommerce_style(){
 	wp_register_style( 'mytheme-woocommerce', get_template_directory_uri() . '/css/woocommerce/woocommerce.css' );
 	
@@ -319,7 +418,7 @@ if ( ! function_exists( 'et_core_intentionally_unescaped' ) ) {
 	}
 }
 
-
+// empty woocommerce cart text personalized
 function ds_custom_wc_empty_cart_text()
 {
    ob_start();?>
@@ -375,25 +474,3 @@ function my_custom_wc_cart_item_thumbnail( $thumbnail, $cart_item, $cart_item_ke
 	return $thumbnail;
 }
 add_filter( 'woocommerce_cart_item_thumbnail', 'my_custom_wc_cart_item_thumbnail', 10, 3 );
-
-/**
- * MINI-CART
- */
-function custom_mini_cart() { 
-    ob_start();
-    echo '<a href="#"> ';
-    echo '<i class="fa fa-shopping-cart" aria-hidden="true"></i>';
-    echo '<div class="basket-item-count">';
-    echo '<span class="cart-items-count count">';
-    echo WC()->cart->get_cart_contents_count();
-    echo '</span>';
-    echo '</div>';
-    echo '</a>';
-    echo '<ul class="dropdown-menu dropdown-menu-mini-cart">';
-    echo '<li> <div class="widget_shopping_cart_content">';
-    woocommerce_mini_cart();
-    echo '</div></li></ul>';
-    return ob_get_clean();
-}
-
-add_shortcode( 'custom-techno-mini-cart', 'custom_mini_cart' );

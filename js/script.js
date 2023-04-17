@@ -8,20 +8,6 @@ $('#carouselExampleCaptions').carousel({
     
   })
 
-//
-function scrolled_header() {
-window.addEventListener('scroll', function() {
-  var header = document.getElementById('masthead');
-  var scrollPosition = window.scrollY;
-  if (scrollPosition > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
-}
-
-// hide header while scrolling
 function header_hider_scrolling() {
   var doc = document.documentElement;
   var w = window;
@@ -31,7 +17,7 @@ function header_hider_scrolling() {
   var direction = 0;
   var prevDirection = 0;
 
-  var header = document.getElementById('site-header');
+  var header = document.getElementById('masthead');
 
   var checkScroll = function() {
 
@@ -73,3 +59,8 @@ function header_hider_scrolling() {
   
   window.addEventListener('scroll', checkScroll);
 }
+
+header_hider_scrolling(); // calling the function immediately after declaration
+  
+
+/**  QUANTITY BUTTON FOR THE CART XOO **/
