@@ -13,10 +13,10 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<script src="script.js"></script>
-	<script>
-		window.addEventListener('scroll', scrolled_header);
-	</script>
+	<!-- CODICI MIEI -->
+	<!-- <script src= <?php echo get_template_directory_uri() .'/js/hideHeaderOnScroll.js'; ?>> </script> -->
+	
+	<!-- NON TOCCARE -->
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
@@ -39,7 +39,8 @@
 				</div> -->
 
 				<div class="col site-header__logo d-flex justify-content-center pt-3">
-					<?php the_custom_logo();  ?>
+					<!-- <?php the_custom_logo();  ?> -->
+					
 				</div>
 
 			</div>
