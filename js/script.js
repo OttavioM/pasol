@@ -3,10 +3,10 @@
 //     interval: 2000,
 //     wrap: false
 // })
-$('#carouselExampleCaptions').carousel({
-    interval: 2000
+// $('#carouselExampleCaptions').carousel({
+//     interval: 2000
     
-  })
+//   })
 
 function header_hider_scrolling() {
   var doc = document.documentElement;
@@ -61,6 +61,45 @@ function header_hider_scrolling() {
 }
 
 header_hider_scrolling(); // calling the function immediately after declaration
-  
+
+// Shrink header while scrolled
+function scrolled_header() {
+  window.addEventListener('scroll', function() {
+    var header = document.getElementById('masthead');
+    var scrollPosition = window.scrollY;
+    if (scrollPosition > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+  }
+scrolled_header();
+
+/** **/
+function loadAddressPanel() {
+  jQuery(document).ready(function($) {
+    $(document).on('click', '#address-link', function(event) {
+        event.preventDefault();
+        // $('#address-panel').html('<p>Link clicked!</p>');
+        // $('#address-panel').load('http://pasol.local/shop/');
+        var url = $('#address-link').attr('href');
+        // $('#address-panel').load(url);
+        // $('#address-panel').load('http://pasol.local/my-account/edit-address/billing/');
+        $('#address-panel').html(url);
+    });
+  });
+
+  // jQuery(function($) {
+  //   $(document).on('click', 'a[data-target="#address-panel"]', function(event) {
+  //     event.preventDefault();
+  //     var url = $(this).attr('href');
+  //     // $('#address-panel').load(url + ' #customer_address_fields');
+  //     // $('#address-panel').load('http://pasol.local/shop/');
+  //     $('#address-panel').html('<p>Link clicked!</p>');
+  //   });
+  // });
+}
+loadAddressPanel();
 
 /**  QUANTITY BUTTON FOR THE CART XOO **/
