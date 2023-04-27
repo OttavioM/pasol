@@ -48,11 +48,13 @@ $theme-colors: map-merge($theme-colors, $custom-color);
 
 
 @import "./bootstrap/scss/bootstrap";
+// @import "yeti.scss";
  
 // Add custom code after this
 body {
     overflow-x: hidden;
   }
+
 /***HEADER***/
 .announcement-bar {
     font-size: 0.8rem;
@@ -61,7 +63,7 @@ body {
     height: 3rem;
     display: flex;
     @include media-breakpoint-up(md){
-        // position: fixed;
+        position: fixed;
         top: 0px;
         width:100%;
         z-index: 10;
@@ -69,7 +71,7 @@ body {
     }
 
     @include media-breakpoint-down(md){
-        // position: sticky;
+        position: fixed;
         top: 0px;
         width:100%;
         z-index: 10;
@@ -149,7 +151,7 @@ body {
         @include media-breakpoint-down(md){
             // display: none;
             display: block;
-            // position: sticky;
+            position: fixed;
             // top:41px;
             }
     }
@@ -157,74 +159,83 @@ body {
 }
 
 // if you want to use the function in javascript
-// header_hider_scrolling in scirpt.js
+// header_hider_scrolling in scirpt.js, it create a class of hide_header
 
 // #site-header.hide {
 //     top: -53px;
 // }
 
-// .site-header {
-//     @include media-breakpoint-up(md){
-//         // for sticky header
-//         position: fixed;
-//         top: 3rem;
-//         width: 100%;
-//         z-index: 10;
-//         // end sticky
-//     }
+.site-header {
+    @include media-breakpoint-up(md){
+        // for sticky header
+        position: fixed;
+        top: 3rem;
+        width: 100%;
+        z-index: 10;
+        .main-navigation {
+            display: block;
+            width: 100%;
+            padding-top: 3.5rem;
+        }
+        // end sticky
+    }
 
-//     @include media-breakpoint-down(md){
-//         // for sticky header
-//         // position: sticky;
-//         top: 3rem;
-//         width: 100%;
-//         z-index: 10;
-//         // end sticky
-//     }
+    @include media-breakpoint-down(md){
+        // for sticky header
+        position: fixed;
+        top: 3rem;
+        width: 100%;
+        z-index: 10;
+        // end sticky
+    }
 
-//     background-color: var(--bs-white);
-
-//     img.custom-logo{
-//         width: 6.5rem;
-//         height: auto;
-//     }
-
-//     .aws-search-field {
-//         font-size: 0.9rem;
-//         border-radius: 20px!important;
-//         padding-left: 1.4rem;
-//     }
-
-//     .aws-form-btn {
-//         border-radius: 20px!important;
-//         margin-left: 3px!important;
-//     }
+    background-color: var(--bs-white);
     
-// }
+    img.custom-logo{
+        width: 7.5rem;
+        height: auto;
+        padding-bottom: 0.2rem;
+    }
 
-#masthead {
-    position: fixed;
-    height: 52px;
-    background: #fff;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    transition: all .3s ease;
-    box-shadow: 0 1px 25px rgba(0,0,0, .1);
+    .aws-search-field {
+        font-size: 0.9rem;
+        border-radius: 20px!important;
+        padding-left: 1.4rem;
+    }
+
+    .aws-form-btn {
+        border-radius: 20px!important;
+        margin-left: 3px!important;
+    }
+    
+    transition: .3s ease-in-out !important;
 }
 
+// #masthead {
+//     position: fixed;
+//     height: 52px;
+//     transition: all .3s ease;
+
+// }
+
 #masthead.hide {
-    top: -53px;
+    top: -14rem;
 }
 
 // masthead is the site-hedear but in js is recognized with the ID
-#masthead.scrolled {
-    @include media-breakpoint-down(md){
-        transition: 2s;
+#masthead.site-header.scrolled {
+    @include media-breakpoint-up(md){
+        transition: .3s ease;
+
+        .main-navigation {
+            display: block;
+            width: 100%;
+            padding-top: 0.2rem;
+        }
 
         img.custom-logo{
             // width: 4rem;
-            width: 6.5rem;
+            width: 3.5rem;
             height: auto;
         }
     }
@@ -343,9 +354,14 @@ body {
     border-top: 0.05rem solid $pasol-dark-green!important;
     margin: 1em 0;
   }
-  
+
 /***Carousel***/
+.site{
+    padding-top: 4.5rem;    
+}
+
 .site-main{
+    padding-top: 4.5rem;
     .container-liquid{
         padding: 0rem 0 2rem 0;
     }
@@ -418,6 +434,32 @@ body {
         padding: 3rem 0 1rem 0;
     }
 }
+
+/** HIDE THE DASHBOARD OF THE WOOCOMMERCE **/
+.woocommerce-MyAccount-navigation{
+    display: none;
+}
+// tranform the content to be 100% width
+.woocommerce-account .woocommerce-MyAccount-content{
+    width: 100%;
+}
+
+.my-account-pdash{
+    padding-top: 0.6rem;
+}
+ // orders
+.kt-info-box_04d831-f4 .kt-blocks-info-box-link-wrap{
+    height: 3rem;
+}
+// edit addresses
+.kt-info-box_27d047-60 .kt-blocks-info-box-link-wrap{
+    height: 3rem;
+}
+// edit account
+.kt-info-box_591537-e4 .kt-blocks-info-box-link-wrap{
+    height: 3rem;
+}
+
 /***SECTION POSTs***/
 
 .first-post{

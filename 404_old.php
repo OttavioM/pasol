@@ -14,7 +14,7 @@ get_header('logo');
 ?>
 <!-- ?> -->
 
-	<main id="primary" class="site-main pt-5">
+	<main id="primary" class="site-main">
 
 		<section class="error-404 not-found">
 			<header class="page-header">
