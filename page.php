@@ -18,7 +18,7 @@ get_header('logo');
 ?>
 
 	<main id="primary" class="site-main">
-		<div class="container pt-5">
+		<div class="container pt-7">
 		<?php
 		while ( have_posts() ) :
 			the_post();
