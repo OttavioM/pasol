@@ -166,6 +166,8 @@ function pasol_scripts() {
 	wp_enqueue_script( 'boostrap-script', get_template_directory_uri() .'/js/script.js', array('jquery'));
 
 	wp_enqueue_script( 'header_hider_scrolling', get_template_directory_uri() .'/js/script.js', array( 'jquery' ),false, true);
+	wp_enqueue_script( 'scrolled_header', get_template_directory_uri() .'/js/script.js', array( 'jquery' ),false, true);
+	wp_enqueue_script( 'loadAddressPanel', get_template_directory_uri() .'/js/script.js', array( 'jquery' ),false, true);
 	// wp_enqueue_script( 'hideHeaderOnScroll', get_template_directory_uri() .'/js/hideHeaderOnScroll.js', array( 'jquery' ),false, true);
 	
 	
@@ -189,12 +191,15 @@ function call_header_hider_scrolling() {
     <script>
         (function(){
             header_hider_scrolling();
+			scrolled_header();
+			loadAddressPanel();
         })();
     </script>
     <?php
 }
 add_action( 'wp_footer', 'call_header_hider_scrolling' );
 
+//** WOOCOMMERCE SHORTCODES**/
 
 // new shortcode to see the orders for the user and standard woocommerce empty orders
 // add_shortcode('account_orders', 'display_account_orders');
@@ -242,7 +247,59 @@ function display_user_orders()
 // for the log out
 // Shortcode Action hook 
 
-add_shortcode('user_logout', 'custom_logout');
+function get_woocommerce_addresses() {
+    $addresses = array(
+        'billing' => array(),
+        'shipping' => array(),
+    );
+    
+    if ( is_user_logged_in() ) {
+        $user_id = get_current_user_id();
+        $billing_address = wc_get_account_formatted_address( $user_id );
+        $shipping_address = wc_get_account_formatted_address( $user_id, 'shipping' );
+        
+        if ( $billing_address ) {
+            $addresses['billing'] = $billing_address;
+        }
+        
+        if ( $shipping_address ) {
+            $addresses['shipping'] = $shipping_address;
+        }
+    }
+    
+    return $addresses;
+}
+
+// shipping adress
+function my_shipping_adress_shortcode() {
+	$addresses = get_woocommerce_addresses();
+    ob_start();
+    wc_get_template( 'myaccount/form-edit-address.php', array('load_address' => $addresses['shipping']));
+    return ob_get_clean();
+}
+add_shortcode( 'my_shipping_adress', 'my_shipping_adress_shortcode' );
+
+// billing adress
+function my_billing_adress_shortcode() {
+	$user = wp_get_current_user();
+    ob_start();
+	$checkout = WC()->checkout();
+    wc_get_template( 'checkout/form-billing.php', array( 'checkout' => $checkout) );
+    return ob_get_clean();
+}
+add_shortcode( 'my_billing_adress', 'my_billing_adress_shortcode' );
+
+// shortcode for "my account" account details
+function my_account_account_details_shortcode() {
+	$user = wp_get_current_user();
+    ob_start();
+    wc_get_template( 'myaccount/form-edit-account.php', array( 'user' => $user) );
+    return ob_get_clean();
+}
+add_shortcode( 'my_account_account_details', 'my_account_account_details_shortcode' );
+
+
+//** WOOCOMMERCE SHORTCODES------------END**/
 
 // Callback 
 function custom_logout(){
@@ -258,6 +315,7 @@ function custom_logout(){
 
     return ob_get_clean();
 }
+add_shortcode('user_logout', 'custom_logout');
 
 /** THIS FUNCTION HIDE THE INFOBOX IF USER NOT LOGGED IN**/
 function hide_infobox_if_not_logged_in() {
@@ -273,6 +331,7 @@ function hide_infobox_if_not_logged_in() {
 }
 add_action( 'wp_head', 'hide_infobox_if_not_logged_in' );
 
+/** */
 
 /**
  * Implement the Custom Font.
@@ -396,7 +455,7 @@ function create_links() {
 }
 
  /***
-  * WOOCOMMERCE
+  * WOOCOMMERCE FUNCTIONS AND SHORTCODES
   */
   add_theme_support('woocommerce');
 
@@ -453,6 +512,68 @@ function ds_custom_wc_empty_cart_text()
 remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
 add_filter('woocommerce_cart_is_empty', 'ds_custom_wc_empty_cart_text', 20 );
 
+
+/** styling cart **/
+
+
+// Custom function to modify the WooCommerce cart item thumbnail
+function my_custom_wc_cart_item_thumbnail( $thumbnail, $cart_item, $cart_item_key ) {
+	// Get the product ID for the cart item
+	$product_id = $cart_item['product_id'];
+	// Get the product thumbnail URL
+	$thumbnail_url = get_the_post_thumbnail_url( $product_id, 'thumbnail' );
+	// Create a new thumbnail image with custom styling
+	$thumbnail = '<img src="' . $thumbnail_url . '" style="width: 6rem; height: 6rem; border-radius: 50%;">';
+	// Return the modified thumbnail image
+	return $thumbnail;
+}
+add_filter( 'woocommerce_cart_item_thumbnail', 'my_custom_wc_cart_item_thumbnail', 10, 3 );
+
+/**ADDING SHORTCODES */
+// greetings to the user
+function greet_user( $atts ) {
+    // Extract the shortcode attributes
+    extract( shortcode_atts( array(
+        'name' => 'Guest',
+    ), $atts ) );
+
+	$user = wp_get_current_user();
+    $name = $user->display_name;
+
+    // Get the current hour in 24-hour format
+    $current_hour = date('G');
+
+    // Set the greeting message based on the current hour
+    if ( $current_hour >= 5 && $current_hour < 12 ) {
+        $greeting = 'Good morning';
+    } elseif ( $current_hour >= 12 && $current_hour < 18 ) {
+        $greeting = 'Good afternoon';
+	} elseif ( $current_hour >= 24 || $current_hour < 5 ) {
+        $greeting = 'Good night';
+	} elseif ( $current_hour >= 18 && $current_hour < 23 ) {
+        $greeting = 'Good evening';
+    } else {
+        $greeting = 'Hellooo';
+    }
+
+    // Output the greeting message
+    $output = '<span class="greeting-message">' . $greeting . ', <span style="color:darkolivegreen;font-weight:bold;"> ' . $name . '</span>!</span>';
+
+    // Apply custom CSS styles
+    $output .= '<style>';
+    $output .= '.greeting-message { color: ' . $atts['color'] . '; font-size: ' . $atts['font_size'] . '; }';
+    $output .= '</style>';
+
+    return $output;
+}
+add_shortcode( 'greet_user', 'greet_user' );
+
+
+
+/***
+ * WOOCOMMERCE FUNCTIONS AND SHORTCODES-----END
+ */
+
 /** XOO-CART EMPTY CART REPLACE THE EMPTY TEXT**/
 // This function replaces the default "Your cart is empty" text that appears on the cart page when the user has no items in their cart with a custom HTML content. Here's how it works:
 // The replace_empty_text function is hooked to the xoo_wsc_cart_body_args filter using add_filter.
@@ -470,19 +591,3 @@ function replace_empty_text( $args ) {
     return $args;
 }
 add_filter( 'xoo_wsc_cart_body_args', 'replace_empty_text' );
-
-/** styling cart **/
-
-
-// Custom function to modify the WooCommerce cart item thumbnail
-function my_custom_wc_cart_item_thumbnail( $thumbnail, $cart_item, $cart_item_key ) {
-	// Get the product ID for the cart item
-	$product_id = $cart_item['product_id'];
-	// Get the product thumbnail URL
-	$thumbnail_url = get_the_post_thumbnail_url( $product_id, 'thumbnail' );
-	// Create a new thumbnail image with custom styling
-	$thumbnail = '<img src="' . $thumbnail_url . '" style="width: 6rem; height: 6rem; border-radius: 50%;">';
-	// Return the modified thumbnail image
-	return $thumbnail;
-}
-add_filter( 'woocommerce_cart_item_thumbnail', 'my_custom_wc_cart_item_thumbnail', 10, 3 );
