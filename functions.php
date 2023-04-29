@@ -591,3 +591,48 @@ function replace_empty_text( $args ) {
     return $args;
 }
 add_filter( 'xoo_wsc_cart_body_args', 'replace_empty_text' );
+
+function avatar_shortcode() {
+    $current_user = wp_get_current_user();
+    $avatar_url = get_avatar_url($current_user->ID, array('size' => 150));
+    $template_directory = get_template_directory_uri();
+    $default_avatar = $template_directory . '/img/avatars/avatar1.png';
+    $avatar_options = array(
+        $template_directory . '/img/avatars/avatar2.png',
+        $template_directory . '/img/avatars/avatar2.jpg',
+        $template_directory . '/img/avatars/avatar3.png'
+    );
+    $output = '';
+    $output .= '<div id="avatar-container">';
+    $output .= '<img id="avatar-image" src="' . $avatar_url . '" onerror="this.onerror=null;this.src=\'' . $default_avatar . '\';">';
+    $output .= '<div id="avatar-options" style="display: none;">';
+    foreach($avatar_options as $option) {
+        $output .= '<img class="avatar-option" src="' . $option . '" width="50" height="50">';
+    }
+    $output .= '</div>';
+    $output .= '</div>';
+    $output .= '<script>
+        jQuery(document).ready(function($) {
+            $("#avatar-image").click(function() {
+                $("#avatar-options").toggle();
+            });
+            $(".avatar-option").click(function() {
+                var new_avatar = $(this).attr("src");
+                $("#avatar-image").attr("src", new_avatar);
+                $("#avatar-options").hide();
+                var data = {
+                    action: "update_user_avatar",
+                    avatar_url: new_avatar,
+                    user_id: ' . $current_user->ID . '
+                };
+                $.post(ajaxurl, data, function(response) {
+                    console.log(response);
+                });
+            });
+        });
+    </script>';
+    return $output;
+}
+add_shortcode('avatar', 'avatar_shortcode');
+
+?>
