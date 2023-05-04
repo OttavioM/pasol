@@ -531,6 +531,32 @@ body {
 //     }
 // }
 
+/** Styling woocommerce shop page **/
+.wc-block-product-categories {
+    margin-bottom: 1em;
+    background: #efefef;
+    padding: 2rem 0 0.5rem 1rem;
+}
+.wc-block-product-categories-list.wc-block-product-categories-list--depth-0 {
+    font-size: 1.5rem;
+    list-style: decimal;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+#select-a-category {
+    font-size: 2rem;
+    margin-bottom: 0;
+    margin-top: 3rem;
+}
+.woocommerce-ordering {
+    font-size: 1.7rem;
+}
+.storefront-sorting select {
+    border: 2px solid black;
+    text-align: center;
+    font-variant: small-caps;
+}
+
 /** 404 PAGE **/
 .page_404{background:#fff; font-family: 'Arvo', serif;
     display: block;
