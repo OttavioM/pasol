@@ -446,17 +446,18 @@ body {
 
 .my-account-pdash{
     padding-top: 0.6rem;
+    width: 15rem;
 }
  // orders
-.kt-info-box_04d831-f4 .kt-blocks-info-box-link-wrap{
+ .kt-info-box_c153ee-4c .kt-blocks-info-box-link-wrap{
     height: 3rem;
 }
 // edit addresses
-.kt-info-box_27d047-60 .kt-blocks-info-box-link-wrap{
+.kt-info-box_535ed2-44 .kt-blocks-info-box-link-wrap{
     height: 3rem;
 }
 // edit account
-.kt-info-box_591537-e4 .kt-blocks-info-box-link-wrap{
+.kt-info-box_c68c70-19 .kt-blocks-info-box-link-wrap{
     height: 3rem;
 }
 
@@ -603,6 +604,16 @@ body {
 //     width: 100%;
     
 // }
+
+.greeting-message {
+    display: flex;
+    justify-content: center;
+}
+
+.wp-block-image.size-large.is-resized.is-style-rounded.img-account {
+    display: flex;
+    justify-content: center;
+  }
 
 div.eb-infobox-wrapper {
     overflow: hidden;
