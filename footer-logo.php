@@ -35,7 +35,7 @@
 						About </br>
 						<?php
 							$about_links = create_links(
-								'About Usys', 'https://www.example.com/contact',
+								'About Ussssss', 'https://www.example.com/contact',
 								'Our Partners', 'https://www.example.com/faqs',
 								'Reef Planting', 'https://www.example.com/docs',
 								'Tree Planting', 'https://www.example.com/docs'
