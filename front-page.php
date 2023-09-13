@@ -146,19 +146,6 @@ get_header('logo');
 
 		<!-- <?php front_page_post("/img/reef_proj/reef_protection.jpg ","ciao","testo","white") ?> -->
 		
-		<p>
-  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Enlace con href
-  </a>
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Botón con data-bs-target
-  </button>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    Algún contenido placeholder para el componente de contracción. Este panel está oculto de forma predeterminada, pero se revela cuando el usuario activa el disparador correspondiente.
-  </div>
-</div>
 	</main><!-- #main -->
 
 <?php
