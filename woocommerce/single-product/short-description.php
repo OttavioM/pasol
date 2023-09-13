@@ -109,4 +109,21 @@ if ( ! $short_description ) {
 		</div>
 	  </div>
 	</div>
+	
+	<p>
+	KADENCE accordion
+	</p>
+	
+	<div class="wp-block-kadence-accordion aligncenter"><div class="kt-accordion-wrap kt-accordion-id_568fdb-8e kt-accordion-has-2-panes kt-active-pane-0 kt-accordion-block kt-pane-header-alignment-left kt-accodion-icon-style-basic kt-accodion-icon-side-right" style="max-width:none"><div class="kt-accordion-inner-wrap kt-accordion-initialized" data-allow-multiple-open="false" data-start-open="0">
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-1 kt-pane_157bfe-7d"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show kt-accordion-panel-active" id="kt-accordion-header-334576" aria-controls="kt-accordion-panel-334576" data-kt-accordion-header-id="0" aria-expanded="true"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">What’s Inside</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-active" id="kt-accordion-panel-334576" aria-labelledby="kt-accordion-header-334576" role="region" style="" data-panel-height="224px"><div class="kt-accordion-panel-inner">
+<p><strong>Ingredients</strong>: water, dimethicone, glycerin, cocos nucifera (coconut) oil, cetearyl alcohol, pelvetia canaliculata extract, niacinamide, sea water, musa sapientum (banana) fl ower extract, musa sapientum (banana) fruit extract, musa sapientum (banana) leaf extract, musa sapientum (banana) peel extract, musa sapientum (banana) pulp extract, cocos nucifera (coconut) fruit extract, helianthus annuus (sunfl ower) extract, tocopherol, lactobacillus, lactobacillus ferment, lysolecithin, glucose, pullulan, sclerotium gum, xanthan gum, arachidyl alcohol, arachidyl glucoside, behenyl alcohol, cetearyl glucoside, citric acid, phenoxyethanol, ethylhexylglycerin</p>
+</div></div></div>
+
+
+
+<div class="wp-block-kadence-pane kt-accordion-pane kt-accordion-pane-2 kt-pane_b37d54-9d"><div class="kt-accordion-header-wrap"><button class="kt-blocks-accordion-header kt-acccordion-button-label-show" id="kt-accordion-header-58903" aria-controls="kt-accordion-panel-58903" data-kt-accordion-header-id="1"><span class="kt-blocks-accordion-title-wrap"><span class="kt-blocks-accordion-title">How To Use</span></span><span class="kt-blocks-accordion-icon-trigger"></span></button></div><div class="kt-accordion-panel kt-accordion-panel-hidden" id="kt-accordion-panel-58903" aria-labelledby="kt-accordion-header-58903" role="region" data-panel-height="0px"><div class="kt-accordion-panel-inner">
+<p>Apply one to two pumps onto fingertips and apply all over face and under eyes. Allow serum to absorb completely into skin before applying eye cream. Can be used in the morning and at night.</p>
+</div></div></div>
+</div></div></div>
+
 </div>
