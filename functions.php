@@ -161,6 +161,7 @@ function pasol_scripts() {
 	wp_enqueue_script( 'pasol-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	// Popper and Bootstrap JavaScript
 	wp_enqueue_script( 'bootstrap-script', 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js', array('jquery'));
+	wp_enqueue_script( 'bootstrap-script2','http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', array('jquery'));
 	wp_enqueue_script( 'bootstrap-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js', array('jquery'));
 	// User defined JavaScript
 	wp_enqueue_script( 'boostrap-script', get_template_directory_uri() .'/js/script.js', array('jquery'));
