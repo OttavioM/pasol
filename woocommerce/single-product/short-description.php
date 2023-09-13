@@ -28,9 +28,11 @@ if ( ! $short_description ) {
 }
 
 ?>
+
 <div class="woocommerce-product-details__short-description">
 	<?php echo $short_description; // WPCS: XSS ok. ?>
-	<div class="wp-block-kadence-accordion" id="accordionExample">
+	 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<div class="accordion" id="accordionExample">
   <div class="accordion-item">
 		<h2 class="accordion-header" id="headingOne">
 		  <button
