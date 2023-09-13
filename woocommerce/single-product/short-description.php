@@ -28,6 +28,7 @@ if ( ! $short_description ) {
 }
 
 ?>
+ <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <div class="woocommerce-product-details__short-description">
 	<?php echo $short_description; // WPCS: XSS ok. ?>
 	<div class="accordion" id="accordionExample">
