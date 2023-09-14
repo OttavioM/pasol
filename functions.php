@@ -163,7 +163,7 @@ function pasol_scripts() {
 	wp_enqueue_script( 'bootstrap-script', 'https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js', array('jquery'));
 	wp_enqueue_script( 'bootstrap-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js', array('jquery'));
 	// User defined JavaScript
-	wp_enqueue_script( 'boostrap-script', get_template_directory_uri() .'/js/script.js', array('jquery'));
+	wp_enqueue_script( 'my-script', get_template_directory_uri() .'/js/script.js', array('jquery'));
 
 	wp_enqueue_script( 'header_hider_scrolling', get_template_directory_uri() .'/js/script.js', array( 'jquery' ),false, true);
 	wp_enqueue_script( 'scrolled_header', get_template_directory_uri() .'/js/script.js', array( 'jquery' ),false, true);
