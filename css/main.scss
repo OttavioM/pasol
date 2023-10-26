@@ -53,7 +53,7 @@ $theme-colors: map-merge($theme-colors, $custom-color);
 // @import "yeti.scss";
  
 // Add custom code after this
-body {
+.body {
     overflow-x: hidden;
     background: #fff7f1!important;
     background-color: #fff7f1!important;
@@ -61,7 +61,7 @@ body {
 
 /***HEADER***/
 .announcement-bar {
-    font-size: 0.8rem;
+    font-size: 8rem;
     border-bottom: 1px solid var(--bs-gray);
     background-color: var(--bs-pasol-yellow);
     height: 3rem;

@@ -154,8 +154,6 @@ function pasol_scripts() {
 	wp_enqueue_style( 'pasol-main', get_template_directory_uri() . '/css/main.css');
 	wp_enqueue_style( 'boostrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
 
-
-
 	wp_style_add_data( 'pasol-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'pasol-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
