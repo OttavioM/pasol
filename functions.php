@@ -150,9 +150,6 @@ add_action( 'widgets_init', 'pasol_widgets_init' );
  * Enqueue scripts and styles.
  */
 function pasol_scripts() {
-    echo " this is the template URI" . get_template_directory_uri();
-    echo " this is the stylesheet URI" . get_stylesheet_uri();
-
 	wp_enqueue_style( 'pasol-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'pasol-main', get_template_directory_uri() . '/css/main.css');
 	wp_enqueue_style( 'boostrap-icons', "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
@@ -181,6 +178,13 @@ function pasol_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'pasol_scripts' );
+
+function print_template_uri_to_console() {
+    $theme_uri = get_template_directory_uri();
+    echo "<script>console.log('Template URI: $theme_uri');</script>";
+}
+
+add_action('wp_footer', 'print_template_uri_to_console');
 
 // THIS FUNCTION CALL THE HEADER SCROLLING INSIDE THE 
 // script.js and enqueue in the footer, however it can be also
