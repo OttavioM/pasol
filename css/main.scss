@@ -14,6 +14,8 @@ $pasol-dark-orange: rgb(215, 102, 26,1);
 $pasol-green: #47B19B;
 $pasol-dark-green: #17594D;
 $gray: #e6e6e6;
+$body-background:#fff7f1;
+$body-background2: #fffaf7;
 
 :root{
     --pasol-dark-orange: rgb(215, 102, 26,1);
@@ -53,6 +55,7 @@ $theme-colors: map-merge($theme-colors, $custom-color);
 // Add custom code after this
 body {
     overflow-x: hidden;
+    background-color: $body-background;
   }
 
 /***HEADER***/
