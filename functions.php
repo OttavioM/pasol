@@ -182,6 +182,10 @@ add_action( 'wp_enqueue_scripts', 'pasol_scripts' );
 function print_template_uri_to_console() {
     $theme_uri = get_template_directory_uri();
     echo "<script>console.log('Template URI: $theme_uri');</script>";
+    
+    $style_sheet_uri = get_stylesheet_uri();
+    echo "<script>console.log('Stylesheet URI: $style_sheet_uri');</script>";
+    
 }
 
 add_action('wp_footer', 'print_template_uri_to_console');
