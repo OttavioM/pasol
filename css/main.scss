@@ -55,7 +55,7 @@ $theme-colors: map-merge($theme-colors, $custom-color);
 // Add custom code after this
 body {
     overflow-x: hidden;
-    background-color: $body-background;
+    background: $body-background;
   }
 
 /***HEADER***/
