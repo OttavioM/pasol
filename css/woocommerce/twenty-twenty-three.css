@@ -186,8 +186,7 @@
   font-size: var(--wp--preset--font-size--medium);
 }
 .woocommerce ul.products {
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  padding-inline-start: 0;
   display: flex;
   align-items: stretch;
   flex-direction: row;

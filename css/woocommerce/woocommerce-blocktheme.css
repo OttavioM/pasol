@@ -341,8 +341,7 @@
 .woocommerce-account .woocommerce-MyAccount-content > p:first-of-type,
 .woocommerce-account .woocommerce-MyAccount-content p.form-row-first,
 .woocommerce-account .woocommerce-MyAccount-content p.form-row-last {
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
+  margin-block-start: 0;
 }
 .woocommerce-account table.shop_table.order_details,
 .woocommerce-account .woocommerce-customer-details address {
@@ -353,8 +352,7 @@
   margin-bottom: 1rem;
 }
 .woocommerce-account.woocommerce-edit-address .woocommerce-MyAccount-content form > h3 {
-  -webkit-margin-before: 0;
-          margin-block-start: 0;
+  margin-block-start: 0;
 }
 .woocommerce-account .woocommerce-orders-table__cell.woocommerce-orders-table__cell-order-actions a {
   display: block;

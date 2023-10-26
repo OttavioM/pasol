@@ -281,8 +281,7 @@
   padding: 0.2rem 0 0.2rem 0.5rem;
 }
 .woocommerce ul.products {
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
+  padding-inline-start: 0;
 }
 .woocommerce ul.products li.product {
   list-style: none;
